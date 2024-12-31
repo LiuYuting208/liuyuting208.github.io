@@ -1,75 +1,129 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.6.39">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Scores</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-72d5d2b44bfddbcb81d6511eeb186058.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+    <title>hw-majors.embed</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = '/';
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e5ae1fc492682bfadee4b1303fea6dfb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+     <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -83,15 +137,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script>  
+        <link rel="stylesheet" href="../../styles/index.css">
+      </head>
 
+  <body class="floating nav-fixed quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Packages</h6>
 
-<link rel="stylesheet" href="../../../styles/index.css">
-</head>
+            <a href="../../homework/Homework-3/hw-majors.qmd" class="btn btn-primary quarto-download-embed" download="hw-majors.qmd">Download Source</a>
+          </div>
 
-<body class="nav-fixed fullcontent">
-
-<div id="quarto-search-results"></div>
+     <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
@@ -101,23 +160,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Index</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../homework.html"> 
+    <a class="nav-link" href="../../homework.html"> 
 <span class="menu-text">Homework</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../labs.html"> 
+    <a class="nav-link" href="../../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../practice.html"> 
+    <a class="nav-link" href="../../practice.html"> 
 <span class="menu-text">Practice</span></a>
   </li>  
 </ul>
@@ -137,130 +196,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Scores</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction:</h3>
-<p>This time you will create the data.</p>
-<p><strong><em>Exercise based on <a href="http://chrisalbon.com/">Chris Albon</a> work, the credits belong to him.</em></strong></p>
-</section>
-<section id="step-1.-import-the-necessary-libraries" class="level3">
-<h3 class="anchored" data-anchor-id="step-1.-import-the-necessary-libraries">Step 1. Import the necessary libraries</h3>
-<div id="cell-3" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="step-2.-create-the-dataframe-that-should-look-like-the-one-below." class="level3">
-<h3 class="anchored" data-anchor-id="step-2.-create-the-dataframe-that-should-look-like-the-one-below.">Step 2. Create the DataFrame that should look like the one below.</h3>
-<div id="cell-5" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: [<span class="st">'Jason'</span>, <span class="st">'Molly'</span>, <span class="st">'Tina'</span>, <span class="st">'Jake'</span>, <span class="st">'Amy'</span>],</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: [<span class="st">'Miller'</span>, <span class="st">'Jacobson'</span>, <span class="st">'Ali'</span>, <span class="st">'Milner'</span>, <span class="st">'Cooze'</span>],</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: [<span class="dv">42</span>, <span class="dv">52</span>, <span class="dv">36</span>, <span class="dv">24</span>, <span class="dv">73</span>],</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'female'</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>],</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'preTestScore'</span>: [<span class="dv">4</span>, <span class="dv">24</span>, <span class="dv">31</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'postTestScore'</span>: [<span class="dv">25</span>, <span class="dv">94</span>, <span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">70</span>]</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  first_name last_name  age  female  preTestScore  postTestScore
-0      Jason    Miller   42       0             4             25
-1      Molly  Jacobson   52       1            24             94
-2       Tina       Ali   36       1            31             57
-3       Jake    Milner   24       0             2             62
-4        Amy     Cooze   73       1             3             70</code></pre>
-</div>
-</div>
-</section>
-<section id="step-3.-create-a-scatterplot-of-pretestscore-and-posttestscore-with-the-size-of-each-point-determined-by-age" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.-create-a-scatterplot-of-pretestscore-and-posttestscore-with-the-size-of-each-point-determined-by-age">Step 3. Create a Scatterplot of preTestScore and postTestScore, with the size of each point determined by age</h3>
-<section id="hint-dont-forget-to-place-the-labels" class="level4">
-<h4 class="anchored" data-anchor-id="hint-dont-forget-to-place-the-labels">Hint: Don’t forget to place the labels</h4>
-<div id="cell-7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'preTestScore'</span>], df[<span class="st">'postTestScore'</span>], s<span class="op">=</span>df[<span class="st">'age'</span>], alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Pre Test Score'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Post Test Score'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Pre Test Score vs Post Test Score'</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Scores_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="step-4.-create-a-scatterplot-of-pretestscore-and-posttestscore." class="level3">
-<h3 class="anchored" data-anchor-id="step-4.-create-a-scatterplot-of-pretestscore-and-posttestscore.">Step 4. Create a Scatterplot of preTestScore and postTestScore.</h3>
-</section>
-<section id="this-time-the-size-should-be-4.5-times-the-posttestscore-and-the-color-determined-by-sex" class="level3">
-<h3 class="anchored" data-anchor-id="this-time-the-size-should-be-4.5-times-the-posttestscore-and-the-color-determined-by-sex">This time the size should be 4.5 times the postTestScore and the color determined by sex</h3>
-<div id="cell-9" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'preTestScore'</span>], df[<span class="st">'postTestScore'</span>], </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            s<span class="op">=</span><span class="fl">4.5</span> <span class="op">*</span> df[<span class="st">'postTestScore'</span>], c<span class="op">=</span>df[<span class="st">'female'</span>], cmap<span class="op">=</span><span class="st">'coolwarm'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Pre Test Score'</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Post Test Score'</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Pre Test Score vs Post Test Score with Size and Color'</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Scores_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="bonus-create-your-own-question-and-answer-it." class="level3">
-<h3 class="anchored" data-anchor-id="bonus-create-your-own-question-and-answer-it.">BONUS: Create your own question and answer it.</h3>
-<p>Find the correlation between preTestScore and postTestScore</p>
-<div id="cell-12" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>correlation <span class="op">=</span> df[<span class="st">'preTestScore'</span>].corr(df[<span class="st">'postTestScore'</span>])</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Correlation between preTestScore and postTestScore: </span><span class="sc">{</span>correlation<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Correlation between preTestScore and postTestScore: 0.37803911777651406</code></pre>
-</div>
-</div>
-
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"></h1></header>      <div id="654dee5e-e298-4a1c-b686-05d575acc3aa" class="cell markdown">
+<section id="section" class="level1">
 
 </section>
+</div>
+<div id="87b8ee56" class="cell markdown">
+<p>P— title: “HW - What should I major in?”</p>
+<hr>
+<p>The first step in the process of turning information into knowledge process is to summarize and describe the raw information - the data. In this assignment we explore data on college majors and earnings, specifically the data begin the FiveThirtyEight story <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">“The Economic Guide To Picking A College Major”</a>.</p>
+<p>These data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series.</p>
+<p>We should also note that there are many considerations that go into picking a major. Earnings potential and employment prospects are two of them, and they are important, but they don’t tell the whole story. Keep this in mind as you analyze the data.</p>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>Use <code>pandas</code> for data warnagling and processing,<code>letsplot</code> and <code>matplotlib</code> for visualization.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data can be found on <a href="https://www.kaggle.com/datasets/tunguz/college-majors">Kaggle</a>.</p>
+<p>Let’s think about some questions we might want to answer with these data:</p>
+<ul>
+<li>Which major has the lowest unemployment rate?</li>
+<li>Which major has the highest percentage of women?</li>
+<li>How do the distributions of median income compare across major categories?</li>
+<li>Do women tend to choose majors with lower or higher earnings?</li>
+</ul>
+<p>In the next section we aim to answer these questions.</p>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<section id="which-major-has-the-lowest-unemployment-rate" class="level2">
+<h2 class="anchored" data-anchor-id="which-major-has-the-lowest-unemployment-rate">Which major has the lowest unemployment rate?</h2>
+<p>In order to answer this question all you need to use <code>pandas</code> sorting and grouping functions.</p>
+</section>
+<section id="which-major-has-the-highest-percentage-of-women" class="level2">
+<h2 class="anchored" data-anchor-id="which-major-has-the-highest-percentage-of-women">Which major has the highest percentage of women?</h2>
+<p>To answer such a question we need to arrange the data in descending order. For example, if earlier we were interested in the major with the highest unemployment rate, we would use the following:</p>
+<ul>
+<li>Using what you’ve learned so far, arrange the data in descending order with respect to proportion of women in a major, and display only the major, the total number of people with major, and proportion of women. Show only the top 3 majors.</li>
+</ul>
+</section>
+<section id="how-do-the-distributions-of-median-income-compare-across-major-categories" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-the-distributions-of-median-income-compare-across-major-categories">How do the distributions of median income compare across major categories?</h2>
+<pre class="{marginfigure}"><code>A percentile is a measure used in statistics indicating the value below which a given percentage of observations in a group of observations fall. For example, the 20th percentile is the value below which 20% of the observations may be found. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Percentile)</code></pre>
+<p>There are three types of incomes reported in this data frame: <code>p25th</code>, <code>median</code>, and <code>p75th</code>. These correspond to the 25th, 50th, and 75th percentiles of the income distribution of sampled individuals for a given major.</p>
+<ul>
+<li>Why do we often choose the median, rather than the mean, to describe the typical income of a group of people?</li>
+</ul>
+<p>The question we want to answer “How do the distributions of median income compare across major categories?”. We need to do a few things to answer this question: First, we need to group the data by <code>major_category</code>. Then, we need a way to summarize the distributions of median income within these groups. This decision will depend on the shapes of these distributions. So first, we need to visualize the data.</p>
+<p>Let’s start simple and take a look at the distribution of all median incomes, without considering the major categories. Create a hishogram. Consider the binwidth we chose for our histogram. It’s good practice to always think in the context of the data and try out a few binwidths before settling on a binwidth. You might ask yourself: “What would be a meaningful difference in median incomes?” $1 is obviously too little, $10000 might be too high.</p>
+<ul>
+<li><p>Try binwidths of $1000 and $5000 and choose one. Explain your reasoning for your choice.</p></li>
+<li><p>Plot the distribution of <code>median</code> income using a histogram, faceted by <code>major_category</code>. Use the <code>binwidth</code> you chose in the earlier exercise.</p></li>
+</ul>
+<p>Now that we’ve seen the shapes of the distributions of median incomes for each major category, we should have a better idea for which summary statistic to use to quantify the typical median income.</p>
+<ul>
+<li><p>Which major category has the highest typical (you’ll need to decide what this means) median income?</p></li>
+<li><p>Which major category is the least popular in this sample?</p></li>
+</ul>
+</section>
+<section id="all-stem-fields-arent-the-same" class="level2">
+<h2 class="anchored" data-anchor-id="all-stem-fields-arent-the-same">All STEM fields aren’t the same</h2>
+<p>One of the sections of the <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">FiveThirtyEight story</a> is “All STEM fields aren’t the same”. Let’s see if this is true.</p>
+<p>First, let’s create a list called <code>stem_categories</code> that lists the major categories that are considered STEM fields.</p>
+<p>Then, use this to create a new variable in our dataframe indicating whether a major is STEM or not.</p>
+<p>We can use the logical operators to also filter our data for STEM majors whose median earnings is less than median for all majors’ median earnings.</p>
+<ul>
+<li>Which STEM majors have median salaries equal to or less than the median for all majors’ median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top.</li>
+</ul>
+</section>
+<section id="what-types-of-majors-do-women-tend-to-major-in" class="level2">
+<h2 class="anchored" data-anchor-id="what-types-of-majors-do-women-tend-to-major-in">What types of majors do women tend to major in?</h2>
+<ul>
+<li>Create a scatterplot of median income vs.&nbsp;proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.</li>
+</ul>
+</section>
+<section id="further-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="further-exploration">Further exploration</h2>
+<ul>
+<li>Ask a question of interest to you, and answer it using summary statistic(s) and/or visualization(s).</li>
+</ul>
+</section>
+</section>
+</div>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+
+     </main> <!-- /main -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -676,10 +711,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-</div> <!-- /content -->
-
-
-
-
+</script>  </div> <!-- /content --> 
+  
 </body></html>

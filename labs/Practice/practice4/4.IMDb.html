@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Scores</title>
+<title>imdb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -140,124 +140,175 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Scores</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction:</h3>
-<p>This time you will create the data.</p>
-<p><strong><em>Exercise based on <a href="http://chrisalbon.com/">Chris Albon</a> work, the credits belong to him.</em></strong></p>
-</section>
-<section id="step-1.-import-the-necessary-libraries" class="level3">
-<h3 class="anchored" data-anchor-id="step-1.-import-the-necessary-libraries">Step 1. Import the necessary libraries</h3>
-<div id="cell-3" class="cell" data-execution_count="1">
+<div id="cell-0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="step-2.-create-the-dataframe-that-should-look-like-the-one-below." class="level3">
-<h3 class="anchored" data-anchor-id="step-2.-create-the-dataframe-that-should-look-like-the-one-below.">Step 2. Create the DataFrame that should look like the one below.</h3>
-<div id="cell-5" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: [<span class="st">'Jason'</span>, <span class="st">'Molly'</span>, <span class="st">'Tina'</span>, <span class="st">'Jake'</span>, <span class="st">'Amy'</span>],</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: [<span class="st">'Miller'</span>, <span class="st">'Jacobson'</span>, <span class="st">'Ali'</span>, <span class="st">'Milner'</span>, <span class="st">'Cooze'</span>],</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: [<span class="dv">42</span>, <span class="dv">52</span>, <span class="dv">36</span>, <span class="dv">24</span>, <span class="dv">73</span>],</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'female'</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>],</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'preTestScore'</span>: [<span class="dv">4</span>, <span class="dv">24</span>, <span class="dv">31</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'postTestScore'</span>: [<span class="dv">25</span>, <span class="dv">94</span>, <span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">70</span>]</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  first_name last_name  age  female  preTestScore  postTestScore
-0      Jason    Miller   42       0             4             25
-1      Molly  Jacobson   52       1            24             94
-2       Tina       Ali   36       1            31             57
-3       Jake    Milner   24       0             2             62
-4        Amy     Cooze   73       1             3             70</code></pre>
+<div id="cell-1" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>imdb_data <span class="op">=</span> pd.read_csv(<span class="st">'IMDB_Top250.csv'</span>)  <span class="co"># Replace with actual file path</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>douban_data <span class="op">=</span> pd.read_csv(<span class="st">'douban_top250.csv'</span>)  <span class="co"># Replace with actual file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="cell-2" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.request, urllib.error  <span class="co"># for URL requests</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv  <span class="co"># for saving as CSV</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="step-3.-create-a-scatterplot-of-pretestscore-and-posttestscore-with-the-size-of-each-point-determined-by-age" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.-create-a-scatterplot-of-pretestscore-and-posttestscore-with-the-size-of-each-point-determined-by-age">Step 3. Create a Scatterplot of preTestScore and postTestScore, with the size of each point determined by age</h3>
-<section id="hint-dont-forget-to-place-the-labels" class="level4">
-<h4 class="anchored" data-anchor-id="hint-dont-forget-to-place-the-labels">Hint: Don’t forget to place the labels</h4>
-<div id="cell-7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'preTestScore'</span>], df[<span class="st">'postTestScore'</span>], s<span class="op">=</span>df[<span class="st">'age'</span>], alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Pre Test Score'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Post Test Score'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Pre Test Score vs Post Test Score'</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-3" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regular expressions to extract information</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>findLink <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'&lt;a href="(.*?)"&gt;'</span>)  <span class="co"># detail link</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>findImgSrc <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'&lt;img.*src="(.*?)"'</span>, re.S)  <span class="co"># image link</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>findTitle <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'&lt;span class="title"&gt;(.*)&lt;/span&gt;'</span>)  <span class="co"># movie title</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>findRating <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'&lt;span class="rating_num" property="v:average"&gt;(.*)&lt;/span&gt;'</span>)  <span class="co"># rating</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>findJudge <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'&lt;span&gt;(\d*)人评价&lt;/span&gt;'</span>)  <span class="co"># number of reviews</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>findInq <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'&lt;span class="inq"&gt;(.*)&lt;/span&gt;'</span>)  <span class="co"># summary</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>findBd <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'&lt;p class=""&gt;(.*?)&lt;/p&gt;'</span>, re.S)  <span class="co"># additional info</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load datasets</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>douban_file_path <span class="op">=</span> <span class="st">'douban_top250.csv'</span>  </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>imdb_file_path <span class="op">=</span> <span class="st">'IMDB_Top250.csv'</span>      </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>douban_data <span class="op">=</span> pd.read_csv(douban_file_path, encoding<span class="op">=</span><span class="st">'utf-8'</span>, on_bad_lines<span class="op">=</span><span class="st">'skip'</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>imdb_data <span class="op">=</span> pd.read_csv(imdb_file_path, encoding<span class="op">=</span><span class="st">'utf-8'</span>, on_bad_lines<span class="op">=</span><span class="st">'skip'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming columns for clarity and merging compatibility</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>douban_data.rename(columns<span class="op">=</span>{</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'影片中文名'</span>: <span class="st">'Title'</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'评分'</span>: <span class="st">'Douban_Score'</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'评价数'</span>: <span class="st">'Douban_Reviews'</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'相关信息'</span>: <span class="st">'Douban_Info'</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>imdb_data.rename(columns<span class="op">=</span>{</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: <span class="st">'Title'</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Year'</span>: <span class="st">'Release_Year'</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'IMDB Ranking'</span>: <span class="st">'IMDB_Score'</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Genre'</span>: <span class="st">'IMDB_Genre'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Director'</span>: <span class="st">'IMDB_Director'</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average scores for both platforms</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>douban_avg_score <span class="op">=</span> douban_data[<span class="st">'Douban_Score'</span>].mean()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>imdb_avg_score <span class="op">=</span> imdb_data[<span class="st">'IMDB_Score'</span>].mean()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Find overlapping movies by title</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>overlap_movies <span class="op">=</span> pd.merge(douban_data, imdb_data, on<span class="op">=</span><span class="st">'Title'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize average scores</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.bar([<span class="st">'Douban'</span>, <span class="st">'IMDb'</span>], [douban_avg_score, imdb_avg_score], alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Scores: Douban vs IMDb'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Score'</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyze release year distribution</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>douban_data[<span class="st">'Douban_Info'</span>] <span class="op">=</span> douban_data[<span class="st">'Douban_Info'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>douban_years <span class="op">=</span> douban_data[<span class="st">'Douban_Info'</span>].<span class="bu">str</span>.extract(<span class="vs">r'(\d</span><span class="sc">{4}</span><span class="vs">)'</span>).dropna()</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>douban_years <span class="op">=</span> douban_years[<span class="dv">0</span>].astype(<span class="bu">int</span>).value_counts().sort_index()</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>imdb_years <span class="op">=</span> imdb_data[<span class="st">'Release_Year'</span>].value_counts().sort_index()</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>douban_years.plot(kind<span class="op">=</span><span class="st">'bar'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'Douban'</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>imdb_years.plot(kind<span class="op">=</span><span class="st">'bar'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'IMDb'</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Release Year Distribution'</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of Movies'</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Scores_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="4.IMDb_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4.IMDb_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="step-4.-create-a-scatterplot-of-pretestscore-and-posttestscore." class="level3">
-<h3 class="anchored" data-anchor-id="step-4.-create-a-scatterplot-of-pretestscore-and-posttestscore.">Step 4. Create a Scatterplot of preTestScore and postTestScore.</h3>
-</section>
-<section id="this-time-the-size-should-be-4.5-times-the-posttestscore-and-the-color-determined-by-sex" class="level3">
-<h3 class="anchored" data-anchor-id="this-time-the-size-should-be-4.5-times-the-posttestscore-and-the-color-determined-by-sex">This time the size should be 4.5 times the postTestScore and the color determined by sex</h3>
-<div id="cell-9" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'preTestScore'</span>], df[<span class="st">'postTestScore'</span>], </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            s<span class="op">=</span><span class="fl">4.5</span> <span class="op">*</span> df[<span class="st">'postTestScore'</span>], c<span class="op">=</span>df[<span class="st">'female'</span>], cmap<span class="op">=</span><span class="st">'coolwarm'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Pre Test Score'</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Post Test Score'</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Pre Test Score vs Post Test Score with Size and Color'</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-7" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyze genre distribution</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>imdb_genres <span class="op">=</span> imdb_data[<span class="st">'IMDB_Genre'</span>].<span class="bu">str</span>.split(<span class="st">','</span>).explode().<span class="bu">str</span>.strip().value_counts()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>imdb_genres.head(<span class="dv">10</span>).plot(kind<span class="op">=</span><span class="st">'bar'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 IMDb Genres'</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Genre'</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Top directors by movie count</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>douban_directors <span class="op">=</span> douban_data[<span class="st">'Douban_Info'</span>].<span class="bu">str</span>.extract(<span class="vs">r'导演: (.+?) '</span>).dropna()</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>douban_top_directors <span class="op">=</span> douban_directors[<span class="dv">0</span>].value_counts().head(<span class="dv">10</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>imdb_top_directors <span class="op">=</span> imdb_data[<span class="st">'IMDB_Director'</span>].value_counts().head(<span class="dv">10</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>douban_top_directors.plot(kind<span class="op">=</span><span class="st">'bar'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'Douban'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 Douban Directors'</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Director'</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Movie Count'</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>imdb_top_directors.plot(kind<span class="op">=</span><span class="st">'bar'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'IMDb'</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 IMDb Directors'</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Director'</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Movie Count'</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Save overlapping movies to a CSV file</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>overlap_movies.to_csv(<span class="st">'overlap_movies.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"豆瓣平均评分: </span><span class="sc">{</span>douban_avg_score<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"IMDb平均评分: </span><span class="sc">{</span>imdb_avg_score<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"重叠电影数量: </span><span class="sc">{</span><span class="bu">len</span>(overlap_movies)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Scores_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="4.IMDb_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4.IMDb_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-</section>
-<section id="bonus-create-your-own-question-and-answer-it." class="level3">
-<h3 class="anchored" data-anchor-id="bonus-create-your-own-question-and-answer-it.">BONUS: Create your own question and answer it.</h3>
-<p>Find the correlation between preTestScore and postTestScore</p>
-<div id="cell-12" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>correlation <span class="op">=</span> df[<span class="st">'preTestScore'</span>].corr(df[<span class="st">'postTestScore'</span>])</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Correlation between preTestScore and postTestScore: </span><span class="sc">{</span>correlation<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4.IMDb_files/figure-html/cell-9-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Correlation between preTestScore and postTestScore: 0.37803911777651406</code></pre>
+<pre><code>豆瓣平均评分: 8.9396
+IMDb平均评分: 8.254
+重叠电影数量: 0</code></pre>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
